@@ -4,7 +4,7 @@ layout: post
 title: Welcome to my homepage for machine learning.
 subtitle: Private page for self-learning about NLP and AI.
 description: >-
-  Summarize resoucres and understandings of machine learning.
+  Summarize resoucres and record my understandings of machine learning.
 image: >-
   https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
 optimized_image: >-
@@ -13,7 +13,7 @@ category: blog
 tags:
   - welcome
   - blog
-author: thiagorossener
+author: Alex
 paginate: true
 ---
 Cas sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. _Aenean eu leo quam._ Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
