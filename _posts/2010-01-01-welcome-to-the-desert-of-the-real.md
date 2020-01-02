@@ -1,11 +1,10 @@
 ---
-date: 2019-05-16 23:48:05
+date: 2020-01-02 10:41:00
 layout: post
-title: Welcome to the desert of the real
-subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+title: Welcome to my homepage for machine learning.
+subtitle: Private page for self-learning about NLP and AI.
 description: >-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua.
+  Summarize resoucres and understandings of machine learning.
 image: >-
   https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
 optimized_image: >-
