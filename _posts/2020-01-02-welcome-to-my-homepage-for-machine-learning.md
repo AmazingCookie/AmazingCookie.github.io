@@ -2,7 +2,7 @@
 date: 2020-01-02 10:41:00
 layout: post
 title: Welcome to my homepage for machine learning.
-subtitle: Private page for self-learning of NLP and AI.
+subtitle: Concentrate on NLP and AI.
 description: >-
   Welcome page.
 image: >-
