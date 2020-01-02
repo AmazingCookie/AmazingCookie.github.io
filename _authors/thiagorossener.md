@@ -1,15 +1,8 @@
 ---
 layout: author
 photo: /assets/img/uploads/profile.png
-name: thiagorossener
-display_name: Thiago Rossener
-position: Chief Editor
-bio: Just a developer.
-github_username: thiagorossener
-facebook_username: thiagorossener
-twitter_username: thiagorossener
-instagram_username: thiagorossener
-linkedin_username: thiagorossener
-medium_username: thiagorossener
----
-
+name: Alex
+display_name: Alex ZHAN
+position: Page Owener
+bio: The owner of the page.
+github_username: laomo8121
