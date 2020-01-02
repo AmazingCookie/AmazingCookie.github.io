@@ -1,12 +1,11 @@
 name: Machine Learning
-title: Machine Learning | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by Thiago Rossener.
+title: Machine Learning | A self-learning webpage
+description: It's a private webpage for self-learning.
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
+  - NLP
+  - Machine Learning
+  - AI
 email: laomo8121@outlook.com
 disqus_username: Alex
 show_hero: true
