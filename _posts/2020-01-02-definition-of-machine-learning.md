@@ -63,8 +63,7 @@ Notations:
 ### Supervised Learning - Linear Regression
 **Definition**: By given a real-valued input, we will predict a real-valued output, denoted as _hθ(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
 
-#### Cost Function
-Measure the accuracy of _h_ by taking an average difference, as we will try to minimize the difference between _hθ(x)_ and _y_. The purpose is to find parameters which minimize the cost function.
+**Cost Function**: Measure the accuracy of _h_ by taking an average difference of _hθ(x)_ and _y_. The purpose of the _cost function_ is to find parameters which minimize the cost function.
 
 * **Squared error cost function**: Calculated by: the sum of _(hθ(x<sup>(i)</sup>) - y<sup>(i)</sup>)<sup>2</sup>_ times _1/2m_, where _m_ is the number of training examples, denoted by _J(θ₀,θ₁)_.
 
