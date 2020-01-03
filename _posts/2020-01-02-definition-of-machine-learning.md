@@ -73,7 +73,9 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 
 ### Gradient Descent
 **Definition**: _Gradient_ is the direction which increase the most at a certain point. It can be represented by a vector of partial derivatives,
- denoted by _(&#8753;x,&#8753;y)<sup>T</sup>_. eg. for the point _(x<sub>0</sub>, y<sub>0</sub>)_, the direction _(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ increases _f_ the most, while the direction _-(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ decreases _f_ the most.
+ denoted by _(&#8753;x,&#8753;y)<sup>T</sup>_.
+
+ eg. for the point _(x<sub>0</sub>, y<sub>0</sub>)_, the direction _(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ increases _f_ the most, while the direction _-(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ decreases _f_ the most.
 
 **Purpose**: By graphing the cost function, we want to find a point which minimizes the square error _J_.
 
@@ -90,12 +92,12 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 
 **Hypothesis Function**:
 * Multivariable Form  (a single training example): _h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + .. + θ<sub>n</sub>x<sub>n</sub>._
-* Vectorized Version (a single training example): _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] <[x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]| = θ<sup>T</sup>x_ **(Note: Here is a Transpose. θ is actually a column vector )**.
+* Vectorized Version (a single training example): _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] [x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]<sup>T</sup> = θ<sup>T</sup>x_ **(Note: Here is a Transpose. θ is actually a column vector )**.
 * With _m-th_ training examples, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ **(Note: can not switch the order of X and θ)** instead. Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.
 
 **Cost Function**:
-* Remind: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−yx<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
-* Vectorize Version: _J(θ) _ = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the error of each training example)**.
+* Remind: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−y<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
+* Vectorized Version: _J(θ) = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the difference between hypothesis and the real value of each training example)**.
 
 **Gradient Descent**：
 repeat until covergence: {
