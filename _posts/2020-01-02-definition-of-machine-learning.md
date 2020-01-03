@@ -16,6 +16,9 @@ author: Alex
 paginate: true
 ---
 
+## Table of Contents
+TBC.
+
 ## Formal Definition
 
 > A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. —— Tom Mitchell
@@ -75,8 +78,8 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 **Purpose**: By graphing the cost function, we want to find a point which minimizes the square error _J_.
 
 **Gradient Descent Algorithm**: _θ<sub>j</sub>:=θ<sub>j</sub>−α&#8753;θ<sub>j</sub>_, where _α_ is the learning rate and _j_ is the index. Repeat until convergence.
-* **Linear Regression**: instead, we can convert the differential equation into its real. Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
-* **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details.
+* **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
+* **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
 
 ### Multivariate Linear Regression
 **Notations**:
@@ -94,19 +97,53 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * Remind: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−yx<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
 * Vectorize Version: _J(θ) _ = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the error of each training example)**.
 
+**Gradient Descent**：
+repeat until covergence: {
+  _θ<sub>j</sub>:=θ<sub>j</sub>−α&#8753;θ<sub>j</sub>_
+}, where _α_ is the learning rate and _j (0..n)_  is the index. Repeat until convergence.
 
+Matrix Notation: _θ := θ - a&nabla;J(θ) = θ−m/α​X<sup>T</sup>(Xθ−y​)_ , where _a&nabla;J(θ)_ is the column vector of partial derivatives. The second formula is derived from the substitution of _(h<sub>0</sub>(x<sup>(i)</sup>)-y<sup>(i)</sup>)_.\
 
+Running Time: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 
+### Tip
+**Improve the efficiency of gradient descent by restricting the range of input values (_-1..1_ or _-0.5..0.5_).**
+1. Feature Scaling: divide inputs by range(maximum-minimum), resulting in _1_ as its new range.
+2. Mean Normalization: subtract the average value(mean value) and divide inputs by range/standard.
 
+**When to Declare Convergence**
+* Once _J(θ)_ decreases by some small value _E_, declare convergence. The threshold _E_ will be decided based on the situation.
 
+### Polynomial Regression and Features
+**Idea**: Improve the hypothesis function by combining multiple features into a new feature, such as taking _x<sub>1</sub>x<sub>2</sub>_ as _x<sub>3</sub>_.
+
+**Example**: Create a new feature by square an existing feature _x<sub>1</sub>_, then we turn _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁_ into _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁ + θ<sub>2</sub>x<sub>1</sub><sup>2</sup>_. In addition, we can apply the square root as well.
+
+**Note**: _Feature Scaling_ becomes relatively important as the square and the cubic can be extremely large.
+
+### Normal Equation
+**Formula**: _θ=(X<sup>T</sup>X)<sup>−1</sup>X<sup>T</sup>y_
+
+**Proof**: Substitute _h<sub>θ</sub>(x)_ with _θ<sup>T</sup>x_, and expand it by applying the multiplication. More details can be found [here](https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression).
+
+**Running time**: _O(n<sup>3</sup>)_, since calculating _(X<sup>T</sup>X)<sup>-1</sup>_ takes _O(n<sup>3</sup>)_.
+
+**Non-invertibility**: _X<sup>T</sup>X_ may not be invertible since:
+1. Parallel(delta equals 0). Linear dependences of features. In this case, decrease the number of features by finding their relations.
+2. The number of features is huge. In this case, delete some features or use "regularization".
 
 ## Reference:
 1. [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS)
 2. [Difference Between Clustering and Classification](https://www.differencebetween.com/difference-between-clustering-and-vs-classification/)
 3. [Gradient Descent](https://zhuanlan.zhihu.com/p/64402931)
 4. [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html)
+5. [Derivation of the Normal Equation for linear regression](https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression)
+6. [The Normal Equation and matrix calculus](https://eli.thegreenplace.net/2015/the-normal-equation-and-matrix-calculus/)
+7. [inv and pinv](https://blog.csdn.net/yinyu19950811/article/details/61420131)
 
 ## Related:
 1. Linear Algebra
 2. Matrix
 3. Partial Derivative
+
+Last update: 3:09pm 03/01/2020
