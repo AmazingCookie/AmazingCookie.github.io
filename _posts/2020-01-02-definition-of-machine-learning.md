@@ -54,23 +54,34 @@ As a result of machine learning, the computer program can perform better in _T_ 
 ## Type
 
 ### Supervised Learning
+
 In **Supervised Learning**, there must be a relationship between inputs and outputs. According to this, problems can be divided into two categories:
-* **Regression**: continuous function. Outputs can be _predicted_ based on inputs - eg. Predict the age of a person based on pictures.
-* **Classification**: also called 'discrete'. Outputs will be separated into distinct categories instead of predicting the their specific values - eg. Predict will a person be bald based on pictures.
+
+* **Regression**: continuous function. Outputs can be _predicted_ based on inputs
+  > eg. Predict the age of a person based on pictures.
+
+* **Classification**: also called 'discrete'. Outputs will be separated into distinct categories instead of predicting the their specific values
+  > eg. Predict will a person be bald based on pictures.
 
 ### Unsupervised Learning
 In Unsupervised learning, we will process data sets with no label or with same labels. No results are required to be predicted.
 
-* **Clustering Algorithm**: Decide data into different clusters. eg. News about the same topic from different newspapers.
+* **Clustering Algorithm**: Decide data into different clusters.
+  > eg. News about the same topic from different newspapers.
+
 * **Cocktail Party Algorithm**: Non-Clustering. Separate overlapping voices/audios.
 
 ### Important:
 
 * **The difference between _Clustering_ and _Classification_**:
 
-  In _Classification_, before processing any data, the definition of each class will be decided first. eg: Group fruits into apples, bananas, and oranges based on given pictures.
+  In _Classification_, before processing any data, the definition of each class will be decided first.
 
-  Instead, in _Clustering_, classes will not be pre-defined. Data will be divided into different groups by detecting similar features. eg: Group fruits of similar types based on given pictures.
+  > eg: Group fruits into apples, bananas, and oranges based on given pictures.
+
+  Instead, in _Clustering_, classes will not be pre-defined. Data will be divided into different groups by detecting similar features.
+
+  > eg: Group fruits of similar types based on given pictures.
 
   Also, once you've **labelled** the data, it will be treated as _Supervised Learning Problem_.
 
@@ -91,7 +102,9 @@ In Unsupervised learning, we will process data sets with no label or with same l
 
 #### Hypothesis Function
 
-* By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
+* By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_.
+
+  >eg. predict housing prices of based on their sizes.
 
 #### Cost Function
 * Measure the accuracy of _h_ by taking an average difference of _h<sub>θ</sub>(x)_ and _y_. The use of the algorithm is to find parameters which minimize the cost function.
@@ -101,11 +114,19 @@ In Unsupervised learning, we will process data sets with no label or with same l
 #### Gradient Descent
 * _Gradient_ is the direction which increase the most at a certain point. It can be represented by a vector of partial derivatives, denoted by _(&#8753;x,&#8753;y)<sup>T</sup>_. By graphing the cost function, we want to find a point which minimizes the square error _J_.
 
-  * eg. for the point _(x<sub>0</sub>, y<sub>0</sub>)_, the direction _(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ **increases** _f_ the most, while the direction _-(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ **decreases** _f_ the most.
+  > eg. for the point _(x<sub>0</sub>, y<sub>0</sub>)_, the direction _(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ **increases** _f_ the most, while the direction _-(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ **decreases** _f_ the most.
 
 * **Gradient Descent Algorithm**: _θ<sub>j</sub> := θ<sub>j</sub> − α&#8753;θ<sub>j</sub>_, where _α_ is the learning rate and _j_ is the index. Repeat until convergence.
-  * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
-  * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
+
+  * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_).
+
+  <small>Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.</small>
+
+  * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency.
+
+  During the practice, if _J(θ)_ increases, it's better to decrease _a_.
+
+  <small>Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. </small>
 
 ***
 
@@ -121,11 +142,17 @@ In Unsupervised learning, we will process data sets with no label or with same l
 #### Multivariate Hypothesis Function
 
 * **Multivariable formula (a single training example)**: _h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + .. + θ<sub>n</sub>x<sub>n</sub>._
+
 * **Vectorized Version (a single training example)**: _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] [x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]<sup>T</sup> = θ<sup>T</sup>x_ **(Note: Here is a Transpose. θ is actually a column vector )**.
-* **With _m-th_ training examples**, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ **(Note: can not switch the order of X and θ)** instead. Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.
+
+* **With _m-th_ training examples**, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ **(Note: do not switch the order of X and θ)** instead.
+
+<small>Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.<small>
 
 #### Multivariate Cost Function
+
 * **Remind**: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−y<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
+
 * **Vectorized Version**: _J(θ) = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the difference between hypothesis and the real value of each training example)**.
 
 #### Multivariate Gradient Descent
