@@ -17,14 +17,14 @@ paginate: true
 ---
 
 ## Table of Contents
-- [Definition](# Formal Definition)
-- [Type](# Type)
-- [Model](# Model)
-  - [Linear Regression](#Linear Regression)
-  - [Multivariate Linear Regression](#Multivariate Linear Regression)
-    - [Tip](#Tip)
-    - [Normal Equation](#Normal Equation)
-  - [Polynomial Regression and Features](#Polynomial Regression and Features)
+- [Definition](#formal-definition)
+- [Type](#type)
+- [Model](#model)
+  - [Linear Regression](#linear-regression)
+  - [Multivariate Linear Regression](#multivariate-linear-regression)
+    - [Tip](#tip)
+    - [Normal Equation](#normal-equation)
+  - [Polynomial Regression and Features](#polynomial-regression-and-features)
 
 ## Formal Definition
 
