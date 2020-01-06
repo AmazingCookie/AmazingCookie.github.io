@@ -16,8 +16,8 @@ author: Alex
 paginate: true
 ---
 
-## Table of Contents
-- [Definition](#formal-definition)
+## 0. Table of Contents
+- [Definition](#1.-formal-definition)
 - [Type](#type)
 - [Model](#model)
   - [Linear Regression](#linear-regression)
@@ -26,7 +26,7 @@ paginate: true
     - [Normal Equation](#normal-equation)
   - [Polynomial Regression and Features](#polynomial-regression-and-features)
 
-## Formal Definition
+## 1. Formal Definition
 
 > A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. —— Tom Mitchell
 
