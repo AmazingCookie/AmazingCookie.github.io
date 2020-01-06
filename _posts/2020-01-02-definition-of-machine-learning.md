@@ -83,6 +83,8 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
 * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
 
+--page-break--
+
 ### Multivariate Linear Regression
 **Notations**:
 * _x<sub>j</sub><sup>(i)</sup>_: variable(feature) _j_ of _i-th_ training example.
@@ -130,7 +132,7 @@ Running Time: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 
 **Running time**: _O(n<sup>3</sup>)_, since calculating _(X<sup>T</sup>X)<sup>-1</sup>_ takes _O(n<sup>3</sup>)_.
 
-**Non-invertibility**: _X<sup>T</sup>X_ may not be invertible since:
+**Non-invertibility**: _X<sup>T</sup>X_ may not be invertible, since:
 1. Parallel(delta equals 0). Linear dependences of features. In this case, decrease the number of features by finding their relations.
 2. The number of features is huge. In this case, delete some features or use "regularization".
 
