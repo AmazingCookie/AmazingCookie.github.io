@@ -16,17 +16,26 @@ author: Alex
 paginate: true
 ---
 
-## 0. Table of Contents
-- [Definition](#1.-formal-definition)
-- [Type](#type)
-- [Model](#model)
-  - [Linear Regression](#linear-regression)
-  - [Multivariate Linear Regression](#multivariate-linear-regression)
-    - [Tip](#tip)
-    - [Normal Equation](#normal-equation)
-  - [Polynomial Regression and Features](#polynomial-regression-and-features)
+## Table of Contents
+1. [Definition](#formal-definition)
+2. [Type](#type)
+3. [Model](#model)
+  3.1. [Linear Regression](#linear-regression)
+    3.1.1 [Hypothesis Function](#hypothesis-function)
+    3.1.2 [Cost Function](#cost-function)
+    3.1.3 [Gradient Descent](#gradient-descent)
+  3.2. [Multivariate Linear Regression](#multivariate-linear-regression)
+    3.2.1 [Hypothesis Function](#hypothesis-function)
+    3.2.2 [Cost Function](#cost-function)
+    3.2.3 [Gradient Descent](#gradient-descent)
+    3.2.4 [Tip](#tip)
+    3.2.5 [Normal Equation](#normal-equation)
+  3.3 [Polynomial Regression and Features](#polynomial-regression-and-features)
+4. [Reference](#reference)
+5. [Related](#related)
 
-## 1. Formal Definition
+## Formal Definition
+***
 
 > A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. —— Tom Mitchell
 
@@ -37,9 +46,9 @@ In other words:
 
 As a result of machine learning, the computer program can perform better in _T_ based on _P_, with iterations _E_.
 
-***
 
 ## Type
+***
 
 ### Supervised Learning
 A relationship between the input and the output exists in _Supervised Learning_. Problems can be divided into two categories:
@@ -63,9 +72,9 @@ Instead, in _Clustering_, classes will not be pre-defined. Data will be divided 
 
 Also, once you've **labelled** the data, it will be treated as _Supervised Learning Problem_.
 
+## Model
 ***
 
-## Model
 **Notations**:
 * _x_: input
 * _y_: output
@@ -76,6 +85,7 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * _h_: hypothesis. The function that takes the input and gives the prediction, denoted as _h: X→Y_.
 
 ### Linear Regression
+***
 
 #### Hypothesis Function
 By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
@@ -94,9 +104,9 @@ _Gradient_ is the direction which increase the most at a certain point. It can b
 * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
 * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
 
+### Multivariate Linear Regression
 ***
 
-### Multivariate Linear Regression
 **Notations**:
 * _x<sub>j</sub><sup>(i)</sup>_: variable(feature) _j_ of _i-th_ training example.
 * _x<sup>(i)</sup>_: a column vector of all variables(features) of _i-th_ example
@@ -141,6 +151,8 @@ repeat until covergence: {
 2. The number of features is huge. In this case, delete some features or use "regularization".
 
 ### Polynomial Regression and Features
+***
+
 **Idea**: Improve the hypothesis function by combining multiple features into a new feature, such as taking _x<sub>1</sub>x<sub>2</sub>_ as _x<sub>3</sub>_.
 
 **Example**: Create a new feature by square an existing feature _x<sub>1</sub>_, then we turn _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁_ into _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁ + θ<sub>2</sub>x<sub>1</sub><sup>2</sup>_. In addition, we can apply the square root as well.
@@ -150,6 +162,8 @@ repeat until covergence: {
 
 
 ## Reference:
+***
+
 1. [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS)
 2. [Difference Between Clustering and Classification](https://www.differencebetween.com/difference-between-clustering-and-vs-classification/)
 3. [Gradient Descent](https://zhuanlan.zhihu.com/p/64402931)
@@ -159,6 +173,8 @@ repeat until covergence: {
 7. [inv and pinv](https://blog.csdn.net/yinyu19950811/article/details/61420131)
 
 ## Related:
+***
+
 1. Linear Algebra
 2. Matrix
 3. Partial Derivative
