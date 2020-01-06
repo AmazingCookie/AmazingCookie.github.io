@@ -17,7 +17,9 @@ paginate: true
 ---
 
 ## Table of Contents
-TBC.
+- (Definition)[#Formal Definition]
+- (Type)[#Type]
+- (Model)[#Model]
 
 ## Formal Definition
 

@@ -9,12 +9,12 @@ tags:
   - AI
 email: laomo8121@outlook.com
 show_hero: true
+paginate: 12
 
 
 # Social Media Settings
 # Remove the item if you don't need it
 github_username: laomo8121
-
 
 # Theme Settings
 themeColor: "#ff0a16"
@@ -26,10 +26,9 @@ texts: "#333333"
 
 # Posts Settings
 show_time_bar: true
-show_modal_on_exit: false
+show_modal_on_exit: true
 show_modal_on_finish_post: true
 two_columns_layout: true
-
 
 # Advanced Settings
 baseurl: "" # the subpath of your site, e.g. /blog
