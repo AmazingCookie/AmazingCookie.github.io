@@ -17,9 +17,9 @@ paginate: true
 ---
 
 ## Table of Contents
-- [Definition](##Formal Definition)
-- [Type](##Type)
-- [Model](##Model)
+- [Definition](# Formal Definition)
+- [Type](# Type)
+- [Model](# Model)
   - [Linear Regression](#Linear Regression)
   - [Multivariate Linear Regression](#Multivariate Linear Regression)
     - [Tip](#Tip)
@@ -77,7 +77,7 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 
 ### Linear Regression
 
-####Hypothesis Function
+#### Hypothesis Function
 By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
 
 #### Cost Function
@@ -163,4 +163,4 @@ repeat until covergence: {
 2. Matrix
 3. Partial Derivative
 
-Last update: 3:09pm 03/01/2020
+<small>Last update: 3:09pm 03/01/2020</small>
