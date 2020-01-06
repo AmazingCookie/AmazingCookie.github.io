@@ -13,29 +13,32 @@ category: Reading
 tags:
   - machine learning
 author: Alex
-paginate: true
+paginate: 12
 ---
 
 ## Table of Contents
-1. [Definition](#formal-definition)
-2. [Type](#type)
-3. [Model](#model)
-  3.1. [Linear Regression](#linear-regression)
-    3.1.1 [Hypothesis Function](#hypothesis-function)
-    3.1.2 [Cost Function](#cost-function)
-    3.1.3 [Gradient Descent](#gradient-descent)
-  3.2. [Multivariate Linear Regression](#multivariate-linear-regression)
-    3.2.1 [Hypothesis Function](#hypothesis-function)
-    3.2.2 [Cost Function](#cost-function)
-    3.2.3 [Gradient Descent](#gradient-descent)
-    3.2.4 [Tip](#tip)
-    3.2.5 [Normal Equation](#normal-equation)
-  3.3 [Polynomial Regression and Features](#polynomial-regression-and-features)
-4. [Reference](#reference)
-5. [Related](#related)
+- 1. [Definition](#formal-definition)
+- 2. [Type](#type)
+- 3. [Model](#model)
+  - 3.1 [Linear Regression](#linear-regression)
+    - 3.1.1 [Notation](#notation)
+    - 3.1.2 [Hypothesis Function](#hypothesis-function)
+    - 3.1.3 [Cost Function](#cost-function)
+    - 3.1.4 [Gradient Descent](#gradient-descent)
+  - 3.2. [Multivariate Linear Regression](#multivariate-linear-regression)
+    - 3.2.1 [Multivariate Notation](#multivariate-notation)
+    - 3.2.1 [Hypothesis Function](#multivariate-hypothesis-function)
+    - 3.2.2 [Cost Function](#multivariate-cost-function)
+    - 3.2.3 [Gradient Descent](#multivariate-gradient-descent)
+    - 3.2.4 [Tip](#tip)
+    - 3.2.5 [Normal Equation](#normal-equation)
+  - 3.3 [Polynomial Regression and Features](#polynomial-regression-and-features)
+- 4. [Reference](#reference)
+- 5. [Related](#related)
+
+***
 
 ## Formal Definition
-***
 
 > A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. —— Tom Mitchell
 
@@ -46,18 +49,17 @@ In other words:
 
 As a result of machine learning, the computer program can perform better in _T_ based on _P_, with iterations _E_.
 
-
-## Type
 ***
 
+## Type
+
 ### Supervised Learning
-A relationship between the input and the output exists in _Supervised Learning_. Problems can be divided into two categories:
+In **Supervised Learning**, there must be a relationship between inputs and outputs. According to this, problems can be divided into two categories:
 * **Regression**: continuous function. Outputs can be _predicted_ based on inputs - eg. Predict the age of a person based on pictures.
 * **Classification**: also called 'discrete'. Outputs will be separated into distinct categories instead of predicting the their specific values - eg. Predict will a person be bald based on pictures.
 
-
 ### Unsupervised Learning
-In Unsupervised learning, we will process data sets with no label/same labels rather than predict results.
+In Unsupervised learning, we will process data sets with no label or with same labels. No results are required to be predicted.
 
 * **Clustering Algorithm**: Decide data into different clusters. eg. News about the same topic from different newspapers.
 * **Cocktail Party Algorithm**: Non-Clustering. Separate overlapping voices/audios.
@@ -72,10 +74,11 @@ Instead, in _Clustering_, classes will not be pre-defined. Data will be divided 
 
 Also, once you've **labelled** the data, it will be treated as _Supervised Learning Problem_.
 
-## Model
 ***
 
-**Notations**:
+## Model
+
+### Notations
 * _x_: input
 * _y_: output
 * _x<sup>(i)</sup>_, _y<sup>(i)</sup>_: the i-th input/output
@@ -85,7 +88,6 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * _h_: hypothesis. The function that takes the input and gives the prediction, denoted as _h: X→Y_.
 
 ### Linear Regression
-***
 
 #### Hypothesis Function
 By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
@@ -104,25 +106,28 @@ _Gradient_ is the direction which increase the most at a certain point. It can b
 * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
 * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
 
-### Multivariate Linear Regression
 ***
 
-**Notations**:
+### Multivariate Linear Regression
+
+#### Multivariate Notation
+
 * _x<sub>j</sub><sup>(i)</sup>_: variable(feature) _j_ of _i-th_ training example.
 * _x<sup>(i)</sup>_: a column vector of all variables(features) of _i-th_ example
 * _m_: number of examples
 * _n_: number of features
 
-#### Hypothesis Function
+#### Multivariate Hypothesis Function
+
 * Multivariable Form  (a single training example): _h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + .. + θ<sub>n</sub>x<sub>n</sub>._
 * Vectorized Version (a single training example): _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] [x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]<sup>T</sup> = θ<sup>T</sup>x_ **(Note: Here is a Transpose. θ is actually a column vector )**.
 * With _m-th_ training examples, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ **(Note: can not switch the order of X and θ)** instead. Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.
 
-#### Cost Function
+#### Multivariate Cost Function
 * Remind: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−y<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
 * Vectorized Version: _J(θ) = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the difference between hypothesis and the real value of each training example)**.
 
-#### Gradient Descent
+#### Multivariate Gradient Descent
 repeat until covergence: {
   _θ<sub>j</sub>:=θ<sub>j</sub>−α&#8753;θ<sub>j</sub>_
 }, where _α_ is the learning rate and _j (0..n)_  is the index. Repeat until convergence.
@@ -150,8 +155,9 @@ repeat until covergence: {
 1. Parallel(delta equals 0). Linear dependences of features. In this case, decrease the number of features by finding their relations.
 2. The number of features is huge. In this case, delete some features or use "regularization".
 
-### Polynomial Regression and Features
 ***
+
+### Polynomial Regression and Features
 
 **Idea**: Improve the hypothesis function by combining multiple features into a new feature, such as taking _x<sub>1</sub>x<sub>2</sub>_ as _x<sub>3</sub>_.
 
@@ -159,10 +165,9 @@ repeat until covergence: {
 
 **Note**: _Feature Scaling_ becomes relatively important as the square and the cubic can be extremely large.
 
-
+***
 
 ## Reference:
-***
 
 1. [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS)
 2. [Difference Between Clustering and Classification](https://www.differencebetween.com/difference-between-clustering-and-vs-classification/)
@@ -172,11 +177,14 @@ repeat until covergence: {
 6. [The Normal Equation and matrix calculus](https://eli.thegreenplace.net/2015/the-normal-equation-and-matrix-calculus/)
 7. [inv and pinv](https://blog.csdn.net/yinyu19950811/article/details/61420131)
 
-## Related:
 ***
+
+## Related:
 
 1. Linear Algebra
 2. Matrix
 3. Partial Derivative
+
+***
 
 <small>Last update: 3:09pm 03/01/2020</small>
