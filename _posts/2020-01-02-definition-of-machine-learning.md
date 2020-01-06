@@ -17,9 +17,9 @@ paginate: true
 ---
 
 ## Table of Contents
-- [Definition](#Formal Definition)
-- [Type](#Type)
-- [Model](#Model)
+- [Definition](##Formal Definition)
+- [Type](##Type)
+- [Model](##Model)
   - [Linear Regression](#Linear Regression)
   - [Multivariate Linear Regression](#Multivariate Linear Regression)
     - [Tip](#Tip)
@@ -76,21 +76,21 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * _h_: hypothesis. The function that takes the input and gives the prediction, denoted as _h: X→Y_.
 
 ### Linear Regression
-**Hypothesis Function**: By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
 
-**Cost Function**: Measure the accuracy of _h_ by taking an average difference of _h<sub>θ</sub>(x)_ and _y_. The use of the algorithm is to find parameters which minimize the cost function.
+####Hypothesis Function
+By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
+
+#### Cost Function
+Measure the accuracy of _h_ by taking an average difference of _h<sub>θ</sub>(x)_ and _y_. The use of the algorithm is to find parameters which minimize the cost function.
 
 * **Squared error cost function**: Calculated by:  _J(θ₀,θ₁) = &sum;(hθ(x<sup>(i)</sup>) - y<sup>(i)</sup>)<sup>2</sup>_ * _1/2m_, where _m_ is the number of training examples.
 
 #### Gradient Descent
-**Definition**: _Gradient_ is the direction which increase the most at a certain point. It can be represented by a vector of partial derivatives,
- denoted by _(&#8753;x,&#8753;y)<sup>T</sup>_.
+_Gradient_ is the direction which increase the most at a certain point. It can be represented by a vector of partial derivatives, denoted by _(&#8753;x,&#8753;y)<sup>T</sup>_. By graphing the cost function, we want to find a point which minimizes the square error _J_.
 
- eg. for the point _(x<sub>0</sub>, y<sub>0</sub>)_, the direction _(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ increases _f_ the most, while the direction _-(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ decreases _f_ the most.
+ eg. for the point _(x<sub>0</sub>, y<sub>0</sub>)_, the direction _(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ **increases** _f_ the most, while the direction _-(&#8753;x<sub>0</sub>,&#8753;y<sub>0</sub>)<sup>T</sup>_ **decreases** _f_ the most.
 
-**Purpose**: By graphing the cost function, we want to find a point which minimizes the square error _J_.
-
-**Gradient Descent Algorithm**: _θ<sub>j</sub>:=θ<sub>j</sub>−α&#8753;θ<sub>j</sub>_, where _α_ is the learning rate and _j_ is the index. Repeat until convergence.
+**Gradient Descent Algorithm**: _θ<sub>j</sub> := θ<sub>j</sub> − α&#8753;θ<sub>j</sub>_, where _α_ is the learning rate and _j_ is the index. Repeat until convergence.
 * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
 * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
 
@@ -103,23 +103,23 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * _m_: number of examples
 * _n_: number of features
 
-**Hypothesis Function**:
+#### Hypothesis Function
 * Multivariable Form  (a single training example): _h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + .. + θ<sub>n</sub>x<sub>n</sub>._
 * Vectorized Version (a single training example): _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] [x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]<sup>T</sup> = θ<sup>T</sup>x_ **(Note: Here is a Transpose. θ is actually a column vector )**.
 * With _m-th_ training examples, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ **(Note: can not switch the order of X and θ)** instead. Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.
 
-**Cost Function**:
+#### Cost Function
 * Remind: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−y<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
 * Vectorized Version: _J(θ) = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the difference between hypothesis and the real value of each training example)**.
 
-**Gradient Descent**：
+#### Gradient Descent
 repeat until covergence: {
   _θ<sub>j</sub>:=θ<sub>j</sub>−α&#8753;θ<sub>j</sub>_
 }, where _α_ is the learning rate and _j (0..n)_  is the index. Repeat until convergence.
 
-Matrix Notation: _θ := θ - a&nabla;J(θ) = θ−m/α​X<sup>T</sup>(Xθ−y​)_ , where _a&nabla;J(θ)_ is the column vector of partial derivatives. The second formula is derived from the substitution of _(h<sub>0</sub>(x<sup>(i)</sup>)-y<sup>(i)</sup>)_.\
+**Matrix Notation**: _θ := θ - a&nabla;J(θ) = θ−m/α​X<sup>T</sup>(Xθ−y​)_ , where _a&nabla;J(θ)_ is the column vector of partial derivatives. The second formula is derived from the substitution of _(h<sub>0</sub>(x<sup>(i)</sup>)-y<sup>(i)</sup>)_.\
 
-Running Time: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
+**Running Time**: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 
 #### Tip
 **Improve the efficiency of gradient descent by restricting the range of input values (_-1..1_ or _-0.5..0.5_).**
