@@ -17,9 +17,14 @@ paginate: true
 ---
 
 ## Table of Contents
-- (Definition)[#Formal Definition]
-- (Type)[#Type]
-- (Model)[#Model]
+- [Definition](#Formal Definition)
+- [Type](#Type)
+- [Model](#Model)
+  - [Linear Regression](#Linear Regression)
+  - [Multivariate Linear Regression](#Multivariate Linear Regression)
+    - [Tip](#Tip)
+    - [Normal Equation](#Normal Equation)
+  - [Polynomial Regression and Features](#Polynomial Regression and Features)
 
 ## Formal Definition
 
@@ -31,6 +36,8 @@ In other words:
 * _T_ is the task
 
 As a result of machine learning, the computer program can perform better in _T_ based on _P_, with iterations _E_.
+
+***
 
 ## Type
 
@@ -56,6 +63,8 @@ Instead, in _Clustering_, classes will not be pre-defined. Data will be divided 
 
 Also, once you've **labelled** the data, it will be treated as _Supervised Learning Problem_.
 
+***
+
 ## Model
 **Notations**:
 * _x_: input
@@ -69,11 +78,11 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 ### Linear Regression
 **Hypothesis Function**: By given a real-valued input, we will predict a real-valued output, denoted as _h<sub>θ</sub>(x) = θ₀ + +θ₁x_. eg. predict housing prices of based on their sizes.
 
-**Cost Function**: Measure the accuracy of _h_ by taking an average difference of _h<sub>θ</sub>(x)_ and _y_. The purpose of the algorithm is to find parameters which minimize the cost function.
+**Cost Function**: Measure the accuracy of _h_ by taking an average difference of _h<sub>θ</sub>(x)_ and _y_. The use of the algorithm is to find parameters which minimize the cost function.
 
 * **Squared error cost function**: Calculated by:  _J(θ₀,θ₁) = &sum;(hθ(x<sup>(i)</sup>) - y<sup>(i)</sup>)<sup>2</sup>_ * _1/2m_, where _m_ is the number of training examples.
 
-### Gradient Descent
+#### Gradient Descent
 **Definition**: _Gradient_ is the direction which increase the most at a certain point. It can be represented by a vector of partial derivatives,
  denoted by _(&#8753;x,&#8753;y)<sup>T</sup>_.
 
@@ -85,7 +94,7 @@ Also, once you've **labelled** the data, it will be treated as _Supervised Learn
 * **Linear Regression**: instead, we can convert the differential equation into its real form (differentiate the original function _J(θ)_). Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS) to view more details.
 * **Note**: It's important to decide an appropriate learning rate. If _a_ is too big, it's likely to skip significant values. If _a_ is too small, it will pull down the efficiency. Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. Also, during the practice, if _J(θ)_ increases, it's better to decrease _a_.
 
---page-break--
+***
 
 ### Multivariate Linear Regression
 **Notations**:
@@ -112,7 +121,7 @@ Matrix Notation: _θ := θ - a&nabla;J(θ) = θ−m/α​X<sup>T</sup>(Xθ−y�
 
 Running Time: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 
-### Tip
+#### Tip
 **Improve the efficiency of gradient descent by restricting the range of input values (_-1..1_ or _-0.5..0.5_).**
 1. Feature Scaling: divide inputs by range(maximum-minimum), resulting in _1_ as its new range.
 2. Mean Normalization: subtract the average value(mean value) and divide inputs by range/standard.
@@ -120,14 +129,7 @@ Running Time: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 **When to Declare Convergence**
 * Once _J(θ)_ decreases by some small value _E_, declare convergence. The threshold _E_ will be decided based on the situation.
 
-### Polynomial Regression and Features
-**Idea**: Improve the hypothesis function by combining multiple features into a new feature, such as taking _x<sub>1</sub>x<sub>2</sub>_ as _x<sub>3</sub>_.
-
-**Example**: Create a new feature by square an existing feature _x<sub>1</sub>_, then we turn _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁_ into _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁ + θ<sub>2</sub>x<sub>1</sub><sup>2</sup>_. In addition, we can apply the square root as well.
-
-**Note**: _Feature Scaling_ becomes relatively important as the square and the cubic can be extremely large.
-
-### Normal Equation
+#### Normal Equation
 **Formula**: _θ=(X<sup>T</sup>X)<sup>−1</sup>X<sup>T</sup>y_
 
 **Proof**: Substitute _h<sub>θ</sub>(x)_ with _θ<sup>T</sup>x_, and expand it by applying the multiplication. More details can be found [here](https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression).
@@ -137,6 +139,15 @@ Running Time: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 **Non-invertibility**: _X<sup>T</sup>X_ may not be invertible, since:
 1. Parallel(delta equals 0). Linear dependences of features. In this case, decrease the number of features by finding their relations.
 2. The number of features is huge. In this case, delete some features or use "regularization".
+
+### Polynomial Regression and Features
+**Idea**: Improve the hypothesis function by combining multiple features into a new feature, such as taking _x<sub>1</sub>x<sub>2</sub>_ as _x<sub>3</sub>_.
+
+**Example**: Create a new feature by square an existing feature _x<sub>1</sub>_, then we turn _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁_ into _h<sub>θ</sub>(x) = θ₀ + +θ₁x₁ + θ<sub>2</sub>x<sub>1</sub><sup>2</sup>_. In addition, we can apply the square root as well.
+
+**Note**: _Feature Scaling_ becomes relatively important as the square and the cubic can be extremely large.
+
+
 
 ## Reference:
 1. [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS)
