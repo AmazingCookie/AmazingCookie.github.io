@@ -1,5 +1,5 @@
 ---
-date: 2020-01-06 16:06:00
+date: 2020-01-07 15:03:00
 layout: post
 title: Overfitting and Underfitting in Machine Learning
 subtitle: The way of minimizing the error of the hypothesis function, and producing the best-fitted curve.
