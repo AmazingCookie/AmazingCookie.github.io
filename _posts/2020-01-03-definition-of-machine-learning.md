@@ -1,5 +1,5 @@
 ---
-date: 2020-01-02 14:01:00
+date: 2020-01-03 10:01:00
 layout: post
 title: Regression Model of Machine Learning
 subtitle: Introduce three types of regression models, but involve basic introduction and definition of machine learning as well.
