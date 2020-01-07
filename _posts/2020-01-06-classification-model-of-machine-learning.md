@@ -60,7 +60,7 @@ The following steps will convert functions (may not be linear) into **Sigmoid Fu
 
 * **Purpose**: As for the **Hypothesis Function** for Classification, instead of real-value predictions, we'll have the **probability** of our outputs.
 
-  > eg. If h<sub>θ</sub>(x) = 0.1, then the probability that the result is 1 is 10%, which is denoted as _h<sub>θ</sub>(x) = P(y=1|x;θ) = 1 - P(y=0|x;θ)_.
+  > eg. If h<sub>θ</sub>(x) = 0.1, then the probability that the result is 1 is 10%, which is denoted as _h<sub>θ</sub>(x) = P(y=1\|x;θ) = 1 - P(y=0\|x;θ)_.
 
 * **Formula**: <br/>
 > _h<sub>θ</sub>(x) = g(θ<sup>T</sup>x)  = 1/(1+e<sup>-θ<sup>T</sup>x</sup>)_
@@ -127,7 +127,7 @@ The same as the Regression Model [links to be added].
 * For Multiclass Classification, we will have _n_ hypothesis functions, where _n_ is the number of classes.
 
 * **Formula**:
-  > h<sub>&theta;</sub><sup>(i)</sup>(x) = P(y = i | x;&theta;), where i = (1,2,3,...,n)
+  > h<sub>&theta;</sub><sup>(i)</sup>(x) = P(y = i \| x;&theta;), where i = (1,2,3,...,n)
 
   For each new _x_, we will find an _i_ which maximizes the **probability**(h<sub>&theta;</sub><sup>(i)</sup>).
 
