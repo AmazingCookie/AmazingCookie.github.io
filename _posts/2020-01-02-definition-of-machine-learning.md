@@ -1,8 +1,8 @@
 ---
 date: 2020-01-02 14:01:00
 layout: post
-title: Definition of Machine Learning.
-subtitle: Basic introduction and definition
+title: Regression Model of Machine Learning
+subtitle: Introduce three types of regression models, but involve basic introduction and definition of machine learning as well.
 description: >-
   Basic concepts of machine learning.
 image: >-
@@ -12,14 +12,18 @@ optimized_image: >-
 category: Reading
 tags:
   - machine learning
+  - model
+  - regression
 author: Alex
-paginate: 12
 ---
 
 ## Table of Contents
 - 1.[Definition](#formal-definition)
 - 2.[Type](#type)
-- 3.[Model](#model)
+  - 2.1 [Supervised Learning](#supervised-learning)
+  - 2.2 [Unsupervised Learning](#unsupervised-learning)
+  - 2.3 [Important](#important)
+- 3.[Regression Model](#regression-model)
   - 3.1 [Linear Regression](#linear-regression)
     - 3.1.1 [Notation](#notation)
     - 3.1.2 [Hypothesis Function](#hypothesis-function)
@@ -83,13 +87,15 @@ In Unsupervised learning, we will process data sets with no label or with same l
 
   > eg: Group fruits of similar types based on given pictures.
 
-  Also, once you've **labelled** the data, it will be treated as _Supervised Learning Problem_.
+  Also, once you've **labelled** the data, it will be treated as **Supervised Learning Problem**.
 
 ***
 
-## Model
+## Regression Model
 
-### Notations
+### Linear Regression
+
+### Notation
 * _x_: input
 * _y_: output
 * _x<sup>(i)</sup>_, _y<sup>(i)</sup>_: the i-th input/output
@@ -97,8 +103,6 @@ In Unsupervised learning, we will process data sets with no label or with same l
 * _X_: the space of input values
 * _Y_: the space of output values
 * _h_: hypothesis. The function that takes the input and gives the prediction, denoted as _h: X→Y_.
-
-### Linear Regression
 
 #### Hypothesis Function
 
@@ -128,6 +132,8 @@ In Unsupervised learning, we will process data sets with no label or with same l
 
   <small>Read [What is learning rate?](https://www.cnblogs.com/lliuye/p/9471231.html) to view more details. </small>
 
+  * **Question**: How do we guarantee the gradient descent specifies the direction that always move downwards? View [this link](https://blog.csdn.net/jxiaobing/article/details/79827856) for the answer.
+
 ***
 
 ### Multivariate Linear Regression
@@ -141,46 +147,43 @@ In Unsupervised learning, we will process data sets with no label or with same l
 
 #### Multivariate Hypothesis Function
 
-* **Multivariable formula (a single training example)**: _h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + .. + θ<sub>n</sub>x<sub>n</sub>._
+* **Multivariable formula** (a conversion of the original formula): _h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + .. + θ<sub>n</sub>x<sub>n</sub>._
 
-* **Vectorized Version (a single training example)**: _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] [x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]<sup>T</sup> = θ<sup>T</sup>x_ **(Note: Here is a Transpose. θ is actually a column vector )**.
+* **Vectorized Version** (a conversion of the original formula): _h<sub>θ</sub>(x) = [θ<sub>0</sub> θ<sub>1</sub> ... θ<sub>n</sub>] [x<sub>0</sub> x<sub>1</sub> ... x<sub>n</sub>]<sup>T</sup> = θ<sup>T</sup>x_ <small>(Note: Here is a Transpose. θ is actually a column vector )</small>.
 
-* **With _m-th_ training examples**, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ **(Note: do not switch the order of X and θ)** instead.
+* **With _m-th_ training examples**, we will replace the vector _x_ with vector _X_, where _X_ represents training examples row-wise. Therefore, we will have _h<sub>θ</sub>(X) = Xθ_ <small>(Note: do not switch the order of X and θ)</small> instead.
 
-<small>Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.<small>
+<small>Read [Coursera](https://www.coursera.org/learn/machine-learning/resources/QQx8l) to view more details.</small>
 
 #### Multivariate Cost Function
 
-* **Remind**: _J(θ) = 1/2m * &sum; (h<sub>θ</sub>​(x<sup>(i)</sup>)−y<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a parameter vector.
+* **Remind**: _J(θ) = 1/2m \* &sum;<small><sup>m</sup><sub>i=1</sub></small> (h<sub>θ</sub>​(x<sup>(i)</sup>)−y<sup>(i)</sup>)<sup>2</sup>_, where _θ_ is a **vector** of parameters (with size _n_), and _m_ is the **number** of training examples.
 
-* **Vectorized Version**: _J(θ) = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values **(Note: (Xθ-y) is actually the difference between hypothesis and the real value of each training example)**.
+* **Vectorized Version**: _J(θ) = 1/2m(Xθ-y)<sup>T</sup>(Xθ-y)_, where _y_ is a vector of real output values <small>(Note: (Xθ-y) is actually the difference between hypothesis and the real value of each training example)</small>.
 
 #### Multivariate Gradient Descent
 
-* **Formula**:
-```
-repeat until covergence: {
-  _θ<sub>j</sub>:=θ<sub>j</sub>−α&#8753;θ<sub>j</sub>_
-  //_α_ is the learning rate and _j (0..n)_  is the index
-}
-```
+* **Formula**:<br/>
+repeat until covergence: {<br/>
+  θ<sub>j</sub> := θ<sub>j</sub> − α&#8753;θ<sub>j</sub><br/>
+}, where _α_ is the learning rate and _j (0..n)_  is the index.
 
-* **Matrix Notation**: _θ := θ - a&nabla;J(θ) = θ−m/α​X<sup>T</sup>(Xθ−y​)_ , where _a&nabla;J(θ)_ is the column vector of partial derivatives. The second formula is derived from the substitution of _(h<sub>0</sub>(x<sup>(i)</sup>)-y<sup>(i)</sup>)_.\
+* **Matrix Notation**: _θ := θ - a&nabla;J(θ) = θ − a/m​ X<sup>T</sup>(Xθ−y​)_ , where _a&nabla;J(θ)_ is the column vector of partial derivatives. The second formula is derived from the substitution of _(h<sub>θ</sub>(x<sup>(i)</sup>)-y<sup>(i)</sup>)_.
 
 * **Running Time**: _O(kn<sup>2</sup>)_ (I would suggest _nm_ instead).
 
 #### Tip
 **Improve the efficiency of gradient descent by restricting the range of input values (_-1..1_ or _-0.5..0.5_).**
-1. Feature Scaling: divide inputs by range(maximum-minimum), resulting in _1_ as its new range.
-2. Mean Normalization: subtract the average value(mean value) and divide inputs by range/standard.
+1. **Feature Scaling**: divide inputs by range(maximum-minimum), resulting in _1_ as its new range.
+2. **Mean Normalization**: subtract the average value(mean value) and divide inputs by range/standard.
 
 **When to Declare Convergence**
-* Once _J(θ)_ decreases by some small value _E_, declare convergence. The threshold _E_ will be decided based on the situation.
+* Once _J(θ)_ decreases by some small value _E_ (which means the slope is approaching 0), declare convergence. The threshold _E_ will be decided based on the situation.
 
 #### Normal Equation
 * **Formula**: _θ=(X<sup>T</sup>X)<sup>−1</sup>X<sup>T</sup>y_
 
-* **Proof**: Substitute _h<sub>θ</sub>(x)_ with _θ<sup>T</sup>x_, and expand it by applying the multiplication. More details can be found [here](https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression).
+* **Proof**: Simply apply [Least Square Method](http://www.efunda.com/math/leastsquares/leastsquares.cfm). Or more specifically, substitute _h<sub>θ</sub>(x)_ with _θ<sup>T</sup>x_, and expand it by applying the multiplication. Details can be found [here](https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression).
 
 * **Running time**: _O(n<sup>3</sup>)_, since calculating _(X<sup>T</sup>X)<sup>-1</sup>_ takes _O(n<sup>3</sup>)_.
 
@@ -200,6 +203,7 @@ repeat until covergence: {
 
 ***
 
+
 ## Reference:
 
 1. [Coursera](https://www.coursera.org/learn/machine-learning/resources/JXWWS)
@@ -209,6 +213,7 @@ repeat until covergence: {
 5. [Derivation of the Normal Equation for linear regression](https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression)
 6. [The Normal Equation and matrix calculus](https://eli.thegreenplace.net/2015/the-normal-equation-and-matrix-calculus/)
 7. [inv and pinv](https://blog.csdn.net/yinyu19950811/article/details/61420131)
+8. [Least Square](http://www.efunda.com/math/leastsquares/leastsquares.cfm)
 
 ***
 
@@ -217,6 +222,7 @@ repeat until covergence: {
 1. Linear Algebra
 2. Matrix
 3. Partial Derivative
+4. Least Square
 
 ***
 
