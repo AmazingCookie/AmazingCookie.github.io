@@ -86,12 +86,12 @@ The following steps will convert functions (may not be linear) into **Sigmoid Fu
   > eg. When x<sub>j</sub> <=10, y = 1, and vice versa. Then, x<sub>j</sub>  = 10 becomes the **Decision Boundary**.
 
 - **Translation**: In order to map values into 0 and 1, We have the rule that
-  > - h<sub>θ</sub>(x) ≥ 0.5 → y = 1
-  - h<sub>θ</sub>(x) < 0.5 → y = 0
+  > h<sub>θ</sub>(x) ≥ 0.5 → y = 1 <br/>
+  h<sub>θ</sub>(x) < 0.5 → y = 0
 
   According to the relationship above, the translation indicates that
-  > - θ<sup>T</SUP>x >= 0 → y = 1
-  - θ<sup>T</SUP>x < 0 → y = 0
+  > θ<sup>T</SUP>x >= 0 → y = 1<br/>
+  θ<sup>T</SUP>x < 0 → y = 0
 
   ***
 
@@ -100,8 +100,8 @@ The following steps will convert functions (may not be linear) into **Sigmoid Fu
 
 * **Formula - Two Conditional Cases**:
   > _J(θ) = 1/m \* &Sum;<sup>m</sup><sub>i=1</sub>Cost(h<sub>θ</sub>(x<sup>(i)</sup>), y<sup>(i)</sup>),_ where <br/>
-  * if y = 1, Cost(h<sub>θ</sub>(x<sup>(i)</sup>), y<sup>(i)</sup>) = -log(h<sub>θ</sub>(x))
-  * if y = 0, Cost(h<sub>θ</sub>(x<sup>(i)</sup>), y<sup>(i)</sup>) = -log(1- h<sub>θ</sub>(x))
+  if y = 1, Cost(h<sub>θ</sub>(x<sup>(i)</sup>), y<sup>(i)</sup>) = -log(h<sub>θ</sub>(x))<br/>
+  if y = 0, Cost(h<sub>θ</sub>(x<sup>(i)</sup>), y<sup>(i)</sup>) = -log(1- h<sub>θ</sub>(x))
 
   To explain the **Cost:**<small>(Recall the graph of [Logarithmic Function](http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=Logarithmic+Function))</small><br/>
    if y = 1, when h<sub>θ</sub>(x) approaches 1, -log(h<sub>θ</sub>(x)) approaches 0. At the same time, when h<sub>θ</sub>(x) approaches 0, -log(h<sub>θ</sub>(x)) approaches &infin;.
@@ -113,8 +113,8 @@ The following steps will convert functions (may not be linear) into **Sigmoid Fu
   The tricky thing is, when y = 0, the left half of the formula will be 0. It's similar when y = 1.
 
 * **Formula - Vectorized Version**:
-  > * h = g(X&theta;)
-  * J(&theta;) = 1/m (−y<sup>T</sup>log⁡(h<sub>&theta;</sub>(x)) − (1−y)<sup>T</sup>log⁡(1-h<sub>&theta;</sub>(x)))
+  > h<sub>&theta;</sub>(x) = g(X&theta;)<br/>
+  J(&theta;) = 1/m (−y<sup>T</sup>log⁡(h<sub>&theta;</sub>(x)) − (1−y)<sup>T</sup>log⁡(1-h<sub>&theta;</sub>(x)))
 
 ***
 
