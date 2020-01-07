@@ -2,7 +2,7 @@
 date: 2020-01-03 10:01:00
 layout: post
 title: Regression Model of Machine Learning
-subtitle: Introduce three types of regression models, but involve basic introduction and definition of machine learning as well.
+subtitle: Introduce three types of regression models.
 description: >-
   Basic concepts of machine learning.
 image: >-
@@ -188,7 +188,7 @@ repeat until covergence: {<br/>
 * **Running time**: _O(n<sup>3</sup>)_, since calculating _(X<sup>T</sup>X)<sup>-1</sup>_ takes _O(n<sup>3</sup>)_.
 
 * **Non-invertibility**: _X<sup>T</sup>X_ may not be invertible, since:
-  1. Parallel(delta equals 0). Linear dependences of features. In this case, decrease the number of features by finding their relations.
+  1. Linear dependences of features(m < n). In this case, decrease the number of features by finding their relations <small> (Involve knowledges about the rank and the singular matrix. Refer to [this link](https://zhidao.baidu.com/question/122798589.html) to see why)</small>. 
   2. The number of features is huge. In this case, delete some features or use "regularization".
 
 ***

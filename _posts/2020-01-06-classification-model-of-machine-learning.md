@@ -2,7 +2,7 @@
 date: 2020-01-06 16:06:00
 layout: post
 title: Classification Model of Machine Learning
-subtitle: Introduce four types of classification models. Knowledges about 'Sigmoid Function' (or 'Logistic Function') are required.
+subtitle: Introduce four types of classification models.
 description: >-
   All about classification models.
 image: >-
@@ -18,7 +18,7 @@ author: Alex
 ---
 
 ## Table of Contents
-- 1. [Logistic Regression Model](#logistic-regression-model)
+- 1.[Logistic Regression Model](#logistic-regression-model)
   - 1.1 [Binary Classification](#binary-classification)
     - 1.1.1 [Definition](#definition)
     - 1.1.2 [Notation](#notation)
@@ -27,8 +27,8 @@ author: Alex
     - 1.1.5 [Cost Function](#cost-function)
     - 1.1.6 [Gradient Descent](#gradient-descent)
   - 1.2 [Multiclass Classification](#Multiclass-classification)
-- 2. [Reference](#reference)
-- 3. [Related](#related)
+- 2.[Reference](#reference)
+- 3.[Related](#related)
 
 ***
 
@@ -142,6 +142,8 @@ The same as the Regression Model [links to be added].
 1. Sigmoid Function
 2. Fractional Function
 3. Logarithmic Function
+4. _Conjugate gradient, BFGS, and L-BFGS_: Existing algorithm which are efficient and convenient for calculating &theta;
+
 ***
 
-<small>Last update: 13:28pm 07/01/2020</small>
+<small>Last update: 15:03pm 07/01/2020</small>
